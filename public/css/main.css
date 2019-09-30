@@ -1,0 +1,175 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  padding-top: 80px;
+  font-size: 14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1;
+  color: #2D2D2D;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.artist-block {
+  height: 80px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.artist-block img {
+  height: 80px;
+  float: left;
+  border-radius: 3.08px;
+}
+
+.artist-info {
+  height: 80px;
+  margin-left: 10px;
+  display: flex;
+  float: left;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.artist-info div {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 0.7;
+}
+
+.artist-info .name {
+  color: #259998;
+}
+
+.artist-info .title {
+  color: #2D2D2D;
+}
+
+.events-block {
+  padding-top: 30px;
+}
+
+.events-block ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 100%;
+}
+
+.events-block ul li {
+  width: 100%;
+  height: 110px;
+  border-bottom: 1px solid #979797;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  list-style-position: inside;
+  float: left;
+}
+
+.event-info {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-info .date, .event-info .venue {
+  font-weight: bold;
+}
+
+.event-info .date {
+  font-size: 16px;
+  color: #259998;
+}
+
+.event-info .venue, .event-info .location {
+  font-size: 14px;
+}
+
+.events-block ul li a {
+  height: 34px;
+  width: 87px;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #259998;
+  color: #259998;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 34px;
+}
+
+.events-block ul li a:hover {
+  background-color: #259998;
+  color: white;
+}
+
+.no-events {
+  margin: 0 auto;
+  margin-top: 80px;
+  text-align: center;
+  color: #9B9B9B;
+  font-size: 20px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .artist-block {
+    padding: 0;
+  }
+
+  .events-block ul li {
+    height: 81px;
+  }
+
+  .event-info {
+    align-items: center;
+    flex-direction: unset;
+    justify-content: unset;
+  }
+
+  .event-info div {
+    float: left;
+  }
+
+  .event-info .date {
+    width: 15%;
+  }
+
+  .event-info .venue {
+    width: 55%;
+  }
+
+  .event-info .location {
+    width: 30%
+  }
+}

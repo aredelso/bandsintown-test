@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bandsintown Test</title>
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+
+	<body>
+		<div class="container">
+      <div class="artist-block">
+        <img src="<%= artist.thumb_url %>">
+        <div class="artist-info">
+          <div class="name"><%= artist.name %></div>
+          <div class="title">Upcoming Events</div>
+        </div>
+      </div>
+      <div class="events-block">
+        <% if (artist.upcoming_event_count) { %>
+          <ul>
+            <% for (let i = 0; i < artist.upcoming_event_count; i++) { %>
+              <li>
+                <div class="event-info">
+                  <div class="date"><%- moment(artist.events[i].datetime).format("MMM DD") %></div>
+                  <div class="venue"><%- artist.events[i].venue.name %></div>
+                  <div class="location"><%- artist.events[i].venue.city %>, <%- artist.events[i].venue.region || artist.events[i].venue.country %></div>
+                </div>
+                <% if (artist.events[i].offers.length) { %>
+                  <a href="<%= artist.events[i].offers[0].url %>">Tickets</a>
+                <% } %>
+              </li>
+            <% } %>
+          </ul>
+        <% } else { %>
+          <h1 class="no-events">No Upcoming Events</h1>
+        <% } %>
+      </div>
+    </div>
+		<script src="/js/lib/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
+</html>
